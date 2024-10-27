@@ -12,9 +12,9 @@ public class ArmstrongNumber {
         int sum = 0;
         int count = String.valueOf(n).length();
         while (n > 0){
-            int last = n%10;
+            int last = n%10;  //takes the last digit
             sum += Math.pow(last, count);
-            n /= 10;
+            n /= 10; //removes the last digit
         }
         return sum == original;
     }
