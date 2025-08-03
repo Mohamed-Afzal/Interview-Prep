@@ -1,10 +1,15 @@
+package sort;
+
 import java.util.Arrays;
 
 public class SelectionSort {
     public static void main(String[] args) {
         int [] arr = {2,1,13,4,5};
         selectionSort(arr);
-        System.out.print(Arrays.toString(arr));
+        System.out.println(Arrays.toString(arr));
+        int [] arr1 = {2,1,13,4,5};
+        selectionSort1(arr1);
+        System.out.println(Arrays.toString(arr1));
     }
 
     static void selectionSort(int [] arr){
@@ -41,5 +46,17 @@ public class SelectionSort {
         int temp = arr[first];
         arr[first] = arr[second];
         arr[second] = temp;
+    }
+
+    static void selectionSort1(int [] arr) {
+        for (int i =0; i<= arr.length-2; i++){
+            int minimum = i;
+            for (int j =i; j<=arr.length-1; j++){
+                if(arr[j]<arr[minimum]) minimum = j;
+            }
+            int temp = arr[minimum];
+            arr[minimum] = arr[i];
+            arr[i] = temp;
+        }
     }
 }

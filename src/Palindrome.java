@@ -2,7 +2,7 @@ public class Palindrome {
     public static void main(String[] args) {
         String str = "abcba";
         System.out.println(isPalindrome(str));
-
+        numberPalindrome(121);
     }
 
     static boolean isPalindrome(String str){
@@ -16,6 +16,23 @@ public class Palindrome {
             if(startchar != endchar) return false;
         }
         return true;
+    }
+
+    static void numberPalindrome(int n){
+        int rev = 0;
+        int temp = n;
+        while(n>0){
+            int last = n%10;
+            rev = (rev*10)+last;
+            n = n/10;
+        }
+        System.out.println(rev);
+
+        if ((temp == rev)) {
+            System.out.println("true");
+        } else {
+            System.out.println("false");
+        }
     }
 
 
